@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CluckRun — Cross the Road, Claim the Prize | Chicken Road Game</title>
+  <meta name="description" content="Play CluckRun, the fast-paced Chicken Road crossing game. Guide your chicken through fiery lanes, multiply your stake on every crossing and cash out before the heat catches up. No download, no registration hassle." />
+  <meta name="keywords" content="CluckRun, chicken road, crash game, cross the road, multiplier game, online casino game, play now" />
+  <meta name="author" content="CluckRun" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#05090A" />
+  <link rel="canonical" href="https://cluckrun.example/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CluckRun — Cross the Road, Claim the Prize" />
+  <meta property="og:description" content="Guide your chicken through fiery lanes. Each crossing multiplies your stake. Cash out before the heat catches up — or dare to go further." />
+  <meta property="og:site_name" content="CluckRun" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:locale:alternate" content="ru" />
+  <meta property="og:locale:alternate" content="de" />
+  <meta property="og:locale:alternate" content="fr" />
+  <meta property="og:locale:alternate" content="es" />
+  <meta property="og:locale:alternate" content="pt" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CluckRun — Cross the Road, Claim the Prize" />
+  <meta name="twitter:description" content="Guide your chicken through fiery lanes. Each crossing multiplies your stake." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "CluckRun",
+    "alternateName": "Chicken Road",
+    "description": "Guide your chicken through fiery lanes. Each crossing multiplies your stake. Cash out before the heat catches up — or dare to go further.",
+    "genre": "Casual / Crash",
+    "playMode": "SinglePlayer",
+    "applicationCategory": "Game",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- ─── Header / Navigation ─────────────────────────────────────────── -->
+  <header class="nav" id="site-header">
+    <div class="nav__inner">
+      <a class="logo" href="#play" aria-label="CluckRun home">
+        <span class="logo__icon" aria-hidden="true">🐔</span>
+        <span class="logo__text">CluckRun</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#gameplay" data-i18n="nav.0">Gameplay</a>
+        <a href="#leaderboard" data-i18n="nav.1">Leaderboard</a>
+        <a href="#how-to-win" data-i18n="nav.2">How to Win</a>
+        <a href="#faq" data-i18n="nav.3">FAQ</a>
+      </nav>
+
+      <div class="nav__actions">
+        <!-- Language switcher -->
+        <div class="lang" id="lang-switcher">
+          <button class="lang__toggle" id="lang-toggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <span class="lang__flag" id="lang-flag" aria-hidden="true">🇬🇧</span>
+            <span class="lang__code" id="lang-code">EN</span>
+            <svg class="lang__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </button>
+          <ul class="lang__menu" id="lang-menu" role="listbox" hidden></ul>
+        </div>
+
+        <a href="#play" class="btn btn--play nav__cta" data-i18n="playNow">Play Now</a>
+
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#gameplay" data-i18n="nav.0">Gameplay</a>
+      <a href="#leaderboard" data-i18n="nav.1">Leaderboard</a>
+      <a href="#how-to-win" data-i18n="nav.2">How to Win</a>
+      <a href="#faq" data-i18n="nav.3">FAQ</a>
+      <a href="#play" class="btn btn--play mobile-menu__cta" data-i18n="playNow">Play Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ─── Hero ──────────────────────────────────────────────────────── -->
+    <section id="play" class="hero" aria-labelledby="hero-title">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="badge anim anim--up" data-anim-delay="0">
+          <span class="badge__dot" aria-hidden="true"></span>
+          <span data-i18n="liveBadge">Live Now · 3,241 Players Online</span>
+        </p>
+
+        <h1 id="hero-title" class="hero__title anim anim--up" data-anim-delay="100">
+          <span data-i18n="heroTitle1">Cross the</span>
+          <span class="hl hl--lime" data-i18n="heroHighlight1">Road.</span>
+          <br />
+          <span data-i18n="heroTitle2">Claim the</span>
+          <span class="hl hl--orange" data-i18n="heroHighlight2">Prize.</span>
+        </h1>
+
+        <p class="hero__sub anim anim--up" data-anim-delay="200" data-i18n="heroSub">
+          Guide your chicken through fiery lanes. Each crossing multiplies your stake. Cash out before the heat catches up — or dare to go further.
+        </p>
+
+        <div class="hero__cta-row anim anim--scale" data-anim-delay="350">
+          <a href="#" class="btn btn--hero">
+            <span aria-hidden="true">🐔</span>
+            <span data-i18n="playNow">Play Now</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <span class="hero__note" data-i18n="noDownload">No download required</span>
+        </div>
+
+        <div class="demo anim anim--up" data-anim-delay="500">
+          <figure class="demo__frame">
+            <figcaption class="demo__bar">
+              <span class="demo__live">
+                <span class="demo__dot" aria-hidden="true"></span>
+                <span>Live Demo</span>
+              </span>
+              <span class="demo__url">chicken-road.inout.games</span>
+            </figcaption>
+            <div class="demo__video">
+              <iframe
+                src="https://chicken-road.inout.games/api/modes/game?gameMode=chicken-road&operatorId=ee2013ed-e1f0-4d6e-97d2-f36619e2eb52&authToken=e3e81c65-1533-4558-993c-ee8dc8e6bf66&currency=USD&lang=en&theme=&gameCustomizationId=&lobbyUrl="
+                title="Chicken Road Demo"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+          </figure>
+
+          <dl class="stats">
+            <div class="stats__item">
+              <dd class="stats__value">124K+</dd>
+              <dt class="stats__label" data-i18n="stats.0">Active Players</dt>
+            </div>
+            <div class="stats__item">
+              <dd class="stats__value">$8.2M</dd>
+              <dt class="stats__label" data-i18n="stats.1">Total Paid Out</dt>
+            </div>
+            <div class="stats__item">
+              <dd class="stats__value">128×</dd>
+              <dt class="stats__label" data-i18n="stats.2">Max Multiplier</dt>
+            </div>
+            <div class="stats__item">
+              <dd class="stats__value">22 min</dd>
+              <dt class="stats__label" data-i18n="stats.3">Avg. Session</dt>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="hero__fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- ─── Gameplay ──────────────────────────────────────────────────── -->
+    <section id="gameplay" class="section gameplay">
+      <div class="container container--6xl">
+        <header class="section__head anim anim--left">
+          <div>
+            <p class="tag tag--lime" data-i18n="gameplayTag">// How It Works</p>
+            <h2 class="section__title" data-i18n="gameplayTitle">Gameplay</h2>
+          </div>
+          <span class="section__rule" aria-hidden="true"></span>
+        </header>
+
+        <ol class="steps">
+          <li class="steps__item anim anim--up" data-anim-delay="0">
+            <span class="steps__corner" aria-hidden="true"></span>
+            <span class="steps__num">01</span>
+            <span class="steps__icon" aria-hidden="true">💰</span>
+            <h3 class="steps__title" data-i18n="steps.0.title">Place Your Bet</h3>
+            <p class="steps__desc" data-i18n="steps.0.desc">Set your wager before each run. The higher the stakes, the hotter the prize.</p>
+          </li>
+          <li class="steps__item steps__item--accent anim anim--up" data-anim-delay="150">
+            <span class="steps__corner" aria-hidden="true"></span>
+            <span class="steps__num">02</span>
+            <span class="steps__icon" aria-hidden="true">🛣️</span>
+            <h3 class="steps__title" data-i18n="steps.1.title">Cross the Road</h3>
+            <p class="steps__desc" data-i18n="steps.1.desc">Guide your chicken through blazing ovens. Each lane crossed multiplies your reward.</p>
+          </li>
+          <li class="steps__item anim anim--up" data-anim-delay="300">
+            <span class="steps__corner" aria-hidden="true"></span>
+            <span class="steps__num">03</span>
+            <span class="steps__icon" aria-hidden="true">⚡</span>
+            <h3 class="steps__title" data-i18n="steps.2.title">Cash Out or Push</h3>
+            <p class="steps__desc" data-i18n="steps.2.desc">Collect winnings at any moment — or dare to cross one more lane and double down.</p>
+          </li>
+        </ol>
+
+        <div class="mult anim anim--up" data-anim-delay="500">
+          <p class="mult__label" data-i18n="multLabel">Multiplier progression per lane</p>
+          <div class="mult__chart" id="mult-chart" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Leaderboard ───────────────────────────────────────────────── -->
+    <section id="leaderboard" class="section leaderboard">
+      <span class="leaderboard__bar" aria-hidden="true"></span>
+      <div class="container container--4xl">
+        <header class="section__head section__head--block anim anim--right">
+          <p class="tag tag--orange" data-i18n="lbTag">// Top Runners</p>
+          <h2 class="section__title" data-i18n="lbTitle">Leaderboard</h2>
+        </header>
+
+        <div class="tabs anim anim--fade" role="tablist" aria-label="Leaderboard period">
+          <button class="tabs__btn is-active" role="tab" aria-selected="true" data-tab="daily" data-i18n="lbTabs.daily">Daily</button>
+          <button class="tabs__btn" role="tab" aria-selected="false" data-tab="weekly" data-i18n="lbTabs.weekly">Weekly</button>
+          <button class="tabs__btn" role="tab" aria-selected="false" data-tab="alltime" data-i18n="lbTabs.alltime">All Time</button>
+        </div>
+
+        <div class="board">
+          <div class="board__head" role="row">
+            <span data-i18n="lbHeader.0">#</span>
+            <span data-i18n="lbHeader.1">Player</span>
+            <span class="board__streak-h" data-i18n="lbHeader.2">Streak</span>
+            <span class="board__score-h" data-i18n="lbHeader.3">Score</span>
+          </div>
+          <div id="board-rows"></div>
+        </div>
+
+        <div class="lb-cta anim anim--up" data-anim-delay="150">
+          <div>
+            <p class="lb-cta__title" data-i18n="lbCta">Think you can top the board?</p>
+            <p class="lb-cta__sub" data-i18n="lbCtaSub">Rankings update every 60 seconds</p>
+          </div>
+          <a href="#" class="btn btn--play lb-cta__btn"><span data-i18n="playNow">Play Now</span> <span aria-hidden="true">🐔</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── How to Win ────────────────────────────────────────────────── -->
+    <section id="how-to-win" class="section howto">
+      <div class="container container--6xl">
+        <header class="section__head section__head--block anim anim--up">
+          <p class="tag tag--lime" data-i18n="howTag">// Pro Strategy</p>
+          <h2 class="section__title" data-i18n="howTitle">How to Win</h2>
+        </header>
+
+        <ul class="tips">
+          <li class="tips__item anim anim--up" data-anim-delay="0">
+            <span class="tips__icon" aria-hidden="true">📈</span>
+            <h3 class="tips__title" data-i18n="tips.0.title">Start Small</h3>
+            <p class="tips__body" data-i18n="tips.0.body">Build your streak on low stakes before scaling up. Consistency beats one big run.</p>
+          </li>
+          <li class="tips__item anim anim--up" data-anim-delay="100">
+            <span class="tips__icon" aria-hidden="true">🧠</span>
+            <h3 class="tips__title" data-i18n="tips.1.title">Know When to Quit</h3>
+            <p class="tips__body" data-i18n="tips.1.body">The house edge increases after lane 6. Most top earners cash out between lanes 4–5.</p>
+          </li>
+          <li class="tips__item anim anim--up" data-anim-delay="200">
+            <span class="tips__icon" aria-hidden="true">👀</span>
+            <h3 class="tips__title" data-i18n="tips.2.title">Watch the Heat</h3>
+            <p class="tips__body" data-i18n="tips.2.body">Oven speed increases with your multiplier. Sharp eyes catch the pattern.</p>
+          </li>
+          <li class="tips__item anim anim--up" data-anim-delay="300">
+            <span class="tips__icon" aria-hidden="true">🎁</span>
+            <h3 class="tips__title" data-i18n="tips.3.title">Daily Bonus</h3>
+            <p class="tips__body" data-i18n="tips.3.body">Log in each day for a free bonus round. Seven-day streaks unlock exclusive multipliers.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ─── Final CTA ─────────────────────────────────────────────────── -->
+    <section class="final" aria-labelledby="final-title">
+      <div class="final__glow" aria-hidden="true"></div>
+      <div class="final__inner">
+        <div class="final__chicken" aria-hidden="true">🐔</div>
+        <h2 id="final-title" class="final__title">
+          <span data-i18n="finalTitle">Ready to</span>
+          <span class="hl hl--lime" data-i18n="finalHighlight">Run?</span>
+        </h2>
+        <p class="final__sub" data-i18n="finalSub">Join 124,000+ players already crossing the road. No download, no registration hassle.</p>
+        <a href="#" class="btn btn--final" data-i18n="finalCta">Play Now — It's Free</a>
+        <p class="final__disclaimer" data-i18n="disclaimer">18+ · Gamble responsibly · T&amp;C Apply</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="logo logo--sm">
+        <span class="logo__icon" aria-hidden="true">🐔</span>
+        <span class="logo__text">CluckRun</span>
+      </div>
+      <p class="footer__links" data-i18n="footerLinks">© 2026 CluckRun. All rights reserved. · Privacy · Terms · Support</p>
+      <p class="footer__right" data-i18n="footerRight">🔒 SSL Secured · Provably Fair</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
