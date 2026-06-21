@@ -2,6 +2,7 @@
   "use strict";
 
   /* ─── i18n data ──────────────────────────────────────────────────────── */
+  /* Translation strings live in translations.js (loaded first) as global `T`. */
   var LANGUAGES = [
     { code: "en", label: "English",   flag: "🇬🇧" },
     { code: "ru", label: "Русский",   flag: "🇷🇺" },
@@ -11,225 +12,47 @@
     { code: "pt", label: "Português", flag: "🇵🇹" }
   ];
 
-  var T = {
-    en: {
-      nav: ["Gameplay", "Leaderboard", "How to Win", "FAQ"],
-      playNow: "Play Now",
-      noDownload: "No download required",
-      liveBadge: "Live Now · 3,241 Players Online",
-      heroTitle1: "Cross the", heroHighlight1: "Road.",
-      heroTitle2: "Claim the", heroHighlight2: "Prize.",
-      heroSub: "Guide your chicken through fiery lanes. Each crossing multiplies your stake. Cash out before the heat catches up — or dare to go further.",
-      stats: ["Active Players", "Total Paid Out", "Max Multiplier", "Avg. Session"],
-      gameplayTag: "// How It Works", gameplayTitle: "Gameplay",
-      multLabel: "Multiplier progression per lane",
-      steps: [
-        { title: "Place Your Bet",   desc: "Set your wager before each run. The higher the stakes, the hotter the prize." },
-        { title: "Cross the Road",   desc: "Guide your chicken through blazing ovens. Each lane crossed multiplies your reward." },
-        { title: "Cash Out or Push", desc: "Collect winnings at any moment — or dare to cross one more lane and double down." }
-      ],
-      lbTag: "// Top Runners", lbTitle: "Leaderboard",
-      lbTabs: { daily: "Daily", weekly: "Weekly", alltime: "All Time" },
-      lbHeader: ["#", "Player", "Streak", "Score"],
-      lbCta: "Think you can top the board?", lbCtaSub: "Rankings update every 60 seconds",
-      howTag: "// Pro Strategy", howTitle: "How to Win",
-      tips: [
-        { title: "Start Small",        body: "Build your streak on low stakes before scaling up. Consistency beats one big run." },
-        { title: "Know When to Quit",  body: "The house edge increases after lane 6. Most top earners cash out between lanes 4–5." },
-        { title: "Watch the Heat",     body: "Oven speed increases with your multiplier. Sharp eyes catch the pattern." },
-        { title: "Daily Bonus",        body: "Log in each day for a free bonus round. Seven-day streaks unlock exclusive multipliers." }
-      ],
-      finalTitle: "Ready to", finalHighlight: "Run?",
-      finalSub: "Join 124,000+ players already crossing the road. No download, no registration hassle.",
-      finalCta: "Play Now — It's Free",
-      disclaimer: "18+ · Gamble responsibly · T&C Apply",
-      footerRight: "🔒 SSL Secured · Provably Fair",
-      footerLinks: "© 2026 CluckRun. All rights reserved. · Privacy · Terms · Support"
-    },
-    ru: {
-      nav: ["Геймплей", "Лидерборд", "Как выиграть", "FAQ"],
-      playNow: "Играть",
-      noDownload: "Без загрузки",
-      liveBadge: "Онлайн · 3 241 игроков",
-      heroTitle1: "Пересеки", heroHighlight1: "Дорогу.",
-      heroTitle2: "Забери", heroHighlight2: "Приз.",
-      heroSub: "Веди курицу через огненные полосы. Каждое пересечение умножает ставку. Забери выигрыш вовремя — или рискни пойти дальше.",
-      stats: ["Активных игроков", "Всего выплачено", "Макс. множитель", "Ср. сессия"],
-      gameplayTag: "// Как это работает", gameplayTitle: "Геймплей",
-      multLabel: "Прогрессия множителя по полосам",
-      steps: [
-        { title: "Сделай ставку",        desc: "Установи ставку перед каждым забегом. Чем выше риск — тем горячее награда." },
-        { title: "Пересеки дорогу",       desc: "Веди курицу через раскалённые печи. Каждая полоса умножает выигрыш." },
-        { title: "Вывести или рискнуть",  desc: "Забери деньги в любой момент — или пересеки ещё одну полосу." }
-      ],
-      lbTag: "// Лучшие игроки", lbTitle: "Лидерборд",
-      lbTabs: { daily: "День", weekly: "Неделя", alltime: "Всё время" },
-      lbHeader: ["#", "Игрок", "Серия", "Очки"],
-      lbCta: "Думаешь, что попадёшь в топ?", lbCtaSub: "Рейтинг обновляется каждые 60 секунд",
-      howTag: "// Стратегия профи", howTitle: "Как выиграть",
-      tips: [
-        { title: "Начни с малого",            body: "Строй серию на малых ставках, прежде чем масштабироваться. Постоянство важнее одного везения." },
-        { title: "Знай, когда остановиться",  body: "Преимущество казино растёт после 6-й полосы. Лучшие игроки уходят на 4–5." },
-        { title: "Следи за жаром",            body: "Скорость печей растёт с множителем. Тренируй реакцию." },
-        { title: "Ежедневный бонус",          body: "Заходи каждый день за бесплатным раундом. 7-дневная серия разблокирует эксклюзивные множители." }
-      ],
-      finalTitle: "Готов", finalHighlight: "Бежать?",
-      finalSub: "Присоединись к 124 000+ игроков. Без загрузки и долгой регистрации.",
-      finalCta: "🐔 Играть — Это бесплатно",
-      disclaimer: "18+ · Играй ответственно · Применяются условия",
-      footerRight: "🔒 SSL · Честная игра",
-      footerLinks: "© 2026 CluckRun. Все права защищены. · Конфиденциальность · Условия · Поддержка"
-    },
-    de: {
-      nav: ["Gameplay", "Rangliste", "Wie gewinnen", "FAQ"],
-      playNow: "Jetzt spielen",
-      noDownload: "Kein Download nötig",
-      liveBadge: "Live · 3.241 Spieler online",
-      heroTitle1: "Überquere die", heroHighlight1: "Straße.",
-      heroTitle2: "Hol dir den", heroHighlight2: "Preis.",
-      heroSub: "Führe dein Huhn durch feurige Spuren. Jede Überquerung multipliziert deinen Einsatz. Cash out bevor die Hitze dich erwischt — oder wage mehr.",
-      stats: ["Aktive Spieler", "Auszahlungen ges.", "Max. Multiplikator", "Ø Sitzung"],
-      gameplayTag: "// So funktioniert es", gameplayTitle: "Gameplay",
-      multLabel: "Multiplikator-Progression pro Spur",
-      steps: [
-        { title: "Einsatz setzen",                desc: "Lege deinen Einsatz fest. Je höher der Einsatz, desto heißer der Gewinn." },
-        { title: "Straße überqueren",             desc: "Führe dein Huhn durch glühende Öfen. Jede Spur multipliziert die Belohnung." },
-        { title: "Auszahlen oder weitermachen",   desc: "Kassiere jederzeit — oder wage eine weitere Spur und verdopple dein Geld." }
-      ],
-      lbTag: "// Top-Läufer", lbTitle: "Rangliste",
-      lbTabs: { daily: "Täglich", weekly: "Wöchentlich", alltime: "Gesamt" },
-      lbHeader: ["#", "Spieler", "Serie", "Punkte"],
-      lbCta: "Glaubst du, du schaffst es an die Spitze?", lbCtaSub: "Rangliste aktualisiert sich alle 60 Sekunden",
-      howTag: "// Profi-Strategie", howTitle: "Wie gewinnen",
-      tips: [
-        { title: "Klein anfangen",            body: "Baue deine Serie mit kleinen Einsätzen auf. Konstanz schlägt einen großen Lauf." },
-        { title: "Wisse, wann du aufhörst",   body: "Der Hausvorteil steigt nach Spur 6. Die besten Verdiener steigen bei 4–5 aus." },
-        { title: "Hitze im Blick behalten",   body: "Die Ofengeschwindigkeit steigt mit dem Multiplikator. Scharfe Augen erkennen das Muster." },
-        { title: "Tagesbonus",                body: "Melde dich täglich für eine kostenlose Runde an. 7-Tage-Serien schalten exklusive Multiplikatoren frei." }
-      ],
-      finalTitle: "Bereit zu", finalHighlight: "laufen?",
-      finalSub: "Schließe dich 124.000+ Spielern an. Kein Download, keine lange Registrierung.",
-      finalCta: "🐔 Jetzt spielen — Kostenlos",
-      disclaimer: "18+ · Spiel verantwortungsbewusst · AGB gelten",
-      footerRight: "🔒 SSL gesichert · Nachweislich fair",
-      footerLinks: "© 2026 CluckRun. Alle Rechte vorbehalten. · Datenschutz · AGB · Support"
-    },
-    fr: {
-      nav: ["Gameplay", "Classement", "Comment gagner", "FAQ"],
-      playNow: "Jouer maintenant",
-      noDownload: "Sans téléchargement",
-      liveBadge: "En direct · 3 241 joueurs en ligne",
-      heroTitle1: "Traverse la", heroHighlight1: "Route.",
-      heroTitle2: "Empoche le", heroHighlight2: "Prix.",
-      heroSub: "Guide ton poulet à travers des voies enflammées. Chaque traversée multiplie ta mise. Encaisse avant que la chaleur t'attrape — ou ose aller plus loin.",
-      stats: ["Joueurs actifs", "Total versé", "Multiplicateur max", "Session moy."],
-      gameplayTag: "// Comment ça marche", gameplayTitle: "Gameplay",
-      multLabel: "Progression du multiplicateur par voie",
-      steps: [
-        { title: "Placer ta mise",        desc: "Fixe ton pari avant chaque course. Plus l'enjeu est élevé, plus la récompense est chaude." },
-        { title: "Traverser la route",    desc: "Guide ton poulet à travers des fours ardents. Chaque voie traversée multiplie ta récompense." },
-        { title: "Encaisser ou pousser",  desc: "Récupère tes gains à tout moment — ou ose une voie de plus pour tout doubler." }
-      ],
-      lbTag: "// Top Coureurs", lbTitle: "Classement",
-      lbTabs: { daily: "Quotidien", weekly: "Hebdomadaire", alltime: "Tout temps" },
-      lbHeader: ["#", "Joueur", "Série", "Score"],
-      lbCta: "Tu penses pouvoir dominer le classement ?", lbCtaSub: "Le classement se met à jour toutes les 60 secondes",
-      howTag: "// Stratégie Pro", howTitle: "Comment gagner",
-      tips: [
-        { title: "Commencer petit",       body: "Construis ta série sur de petits enjeux avant de monter en puissance. La constance prime." },
-        { title: "Savoir s'arrêter",      body: "L'avantage de la maison augmente après la voie 6. Les meilleurs encaissent entre les voies 4–5." },
-        { title: "Surveiller la chaleur", body: "La vitesse du four augmente avec ton multiplicateur. Les yeux vifs repèrent le schéma." },
-        { title: "Bonus quotidien",       body: "Connecte-toi chaque jour pour un tour gratuit. Les séries de 7 jours débloquent des multiplicateurs exclusifs." }
-      ],
-      finalTitle: "Prêt à", finalHighlight: "courir ?",
-      finalSub: "Rejoins 124 000+ joueurs qui traversent déjà la route. Sans téléchargement ni inscription fastidieuse.",
-      finalCta: "🐔 Jouer maintenant — C'est gratuit",
-      disclaimer: "18+ · Jouez de manière responsable · CGU applicables",
-      footerRight: "🔒 SSL sécurisé · Équité prouvée",
-      footerLinks: "© 2026 CluckRun. Tous droits réservés. · Confidentialité · CGU · Support"
-    },
-    es: {
-      nav: ["Gameplay", "Clasificación", "Cómo ganar", "FAQ"],
-      playNow: "Jugar ahora",
-      noDownload: "Sin descarga",
-      liveBadge: "En vivo · 3.241 jugadores online",
-      heroTitle1: "Cruza la", heroHighlight1: "Calle.",
-      heroTitle2: "Reclama el", heroHighlight2: "Premio.",
-      heroSub: "Guía a tu pollo a través de carriles ardientes. Cada cruce multiplica tu apuesta. Retira antes de que el calor te alcance — o atrévete a ir más lejos.",
-      stats: ["Jugadores activos", "Total pagado", "Multiplicador máx.", "Sesión media"],
-      gameplayTag: "// Cómo funciona", gameplayTitle: "Gameplay",
-      multLabel: "Progresión del multiplicador por carril",
-      steps: [
-        { title: "Haz tu apuesta",     desc: "Establece tu apuesta antes de cada carrera. Cuanto mayor el riesgo, mayor el premio." },
-        { title: "Cruza la calle",     desc: "Guía a tu pollo entre hornos al rojo vivo. Cada carril cruzado multiplica tu recompensa." },
-        { title: "Retirar o seguir",   desc: "Cobra tus ganancias en cualquier momento — o cruza un carril más y duplícalas." }
-      ],
-      lbTag: "// Mejores corredores", lbTitle: "Clasificación",
-      lbTabs: { daily: "Diario", weekly: "Semanal", alltime: "Global" },
-      lbHeader: ["#", "Jugador", "Racha", "Puntos"],
-      lbCta: "¿Crees que puedes liderar el tablero?", lbCtaSub: "El ranking se actualiza cada 60 segundos",
-      howTag: "// Estrategia Pro", howTitle: "Cómo ganar",
-      tips: [
-        { title: "Empieza pequeño",    body: "Construye tu racha con apuestas bajas antes de escalar. La consistencia vence al golpe de suerte." },
-        { title: "Saber cuándo parar", body: "La ventaja de la casa aumenta tras el carril 6. Los mejores retiran entre los carriles 4–5." },
-        { title: "Vigila el calor",    body: "La velocidad del horno aumenta con tu multiplicador. Los ojos atentos detectan el patrón." },
-        { title: "Bono diario",        body: "Inicia sesión cada día para una ronda gratuita. Las rachas de 7 días desbloquean multiplicadores exclusivos." }
-      ],
-      finalTitle: "¿Listo para", finalHighlight: "correr?",
-      finalSub: "Únete a más de 124.000 jugadores que ya cruzan la calle. Sin descarga ni registro largo.",
-      finalCta: "🐔 Jugar ahora — Es gratis",
-      disclaimer: "18+ · Juega con responsabilidad · Se aplican T&C",
-      footerRight: "🔒 SSL Seguro · Juego justo comprobable",
-      footerLinks: "© 2026 CluckRun. Todos los derechos reservados. · Privacidad · Términos · Soporte"
-    },
-    pt: {
-      nav: ["Gameplay", "Classificação", "Como ganhar", "FAQ"],
-      playNow: "Jogar agora",
-      noDownload: "Sem download",
-      liveBadge: "Ao vivo · 3.241 jogadores online",
-      heroTitle1: "Atravessa a", heroHighlight1: "Estrada.",
-      heroTitle2: "Conquista o", heroHighlight2: "Prémio.",
-      heroSub: "Guia o teu frango pelas faixas em chamas. Cada travessia multiplica a tua aposta. Levanta antes que o calor te apanhe — ou arrisca ir mais longe.",
-      stats: ["Jogadores ativos", "Total pago", "Multiplicador máx.", "Sessão média"],
-      gameplayTag: "// Como funciona", gameplayTitle: "Gameplay",
-      multLabel: "Progressão do multiplicador por faixa",
-      steps: [
-        { title: "Faz a tua aposta",        desc: "Define a aposta antes de cada corrida. Quanto maior o risco, maior o prémio." },
-        { title: "Atravessa a estrada",     desc: "Guia o frango pelos fornos em brasa. Cada faixa atravessada multiplica a recompensa." },
-        { title: "Levantar ou continuar",   desc: "Recebe os ganhos a qualquer momento — ou arrisca mais uma faixa e duplica tudo." }
-      ],
-      lbTag: "// Melhores corredores", lbTitle: "Classificação",
-      lbTabs: { daily: "Diário", weekly: "Semanal", alltime: "Global" },
-      lbHeader: ["#", "Jogador", "Série", "Pontos"],
-      lbCta: "Achas que consegues liderar o ranking?", lbCtaSub: "O ranking atualiza a cada 60 segundos",
-      howTag: "// Estratégia Pro", howTitle: "Como ganhar",
-      tips: [
-        { title: "Começa devagar",    body: "Constrói a tua série com apostas baixas antes de escalar. A consistência supera a sorte." },
-        { title: "Sabe quando parar", body: "A vantagem da casa aumenta após a faixa 6. Os melhores levantam entre as faixas 4–5." },
-        { title: "Observa o calor",   body: "A velocidade do forno aumenta com o multiplicador. Olhos atentos detetam o padrão." },
-        { title: "Bónus diário",      body: "Entra todos os dias para uma ronda grátis. Séries de 7 dias desbloqueiam multiplicadores exclusivos." }
-      ],
-      finalTitle: "Pronto para", finalHighlight: "correr?",
-      finalSub: "Junta-te a mais de 124.000 jogadores que já atravessam a estrada. Sem download nem registo demorado.",
-      finalCta: "🐔 Jogar agora — É grátis",
-      disclaimer: "18+ · Joga com responsabilidade · T&C aplicam-se",
-      footerRight: "🔒 SSL Seguro · Jogo comprovadamente justo",
-      footerLinks: "© 2026 CluckRun. Todos os direitos reservados. · Privacidade · Termos · Suporte"
-    }
+  /* Player pool with per-period scores & streaks.
+     Invariant for every player: alltime >= weekly >= daily (and same for streaks),
+     so no period can ever out-rank a longer one. Each tab sorts this pool by the
+     selected period and shows the top 10, so rankings differ between tabs. */
+  var PLAYERS = [
+    // name            avatar  daily   weekly   alltime    streaks d / w / a
+    { name: "KFC_Slayer",     avatar: "🐔",  d: 48200, w: 301000, a: 4180000, ds: 32, ws: 61, as: 128 },
+    { name: "RoadRunner99",   avatar: "🦅",  d: 41750, w: 288500, a: 3960000, ds: 28, ws: 57, as: 119 },
+    { name: "CrispyWings",    avatar: "🔥",  d: 37100, w: 264000, a: 3510000, ds: 24, ws: 52, as: 104 },
+    { name: "NuggetKing",     avatar: "👑",  d: 31480, w: 240800, a: 3870000, ds: 19, ws: 49, as: 112 },
+    { name: "FeatherFury",    avatar: "⚡",  d: 28900, w: 198400, a: 2740000, ds: 17, ws: 44, as: 96 },
+    { name: "GrillMaster_X",  avatar: "🎯",  d: 25340, w: 176900, a: 2980000, ds: 14, ws: 40, as: 101 },
+    { name: "BoldBeak",       avatar: "🏆",  d: 22710, w: 154200, a: 2310000, ds: 12, ws: 36, as: 88 },
+    { name: "HotSauce_Pro",   avatar: "🌶️", d: 19850, w: 141600, a: 2590000, ds: 10, ws: 34, as: 93 },
+    { name: "WildWattle",     avatar: "💥",  d: 17220, w: 128300, a: 1980000, ds: 9,  ws: 31, as: 80 },
+    { name: "CluckChampion",  avatar: "🎮",  d: 14600, w: 112700, a: 2140000, ds: 7,  ws: 28, as: 85 },
+    // newcomers
+    { name: "EggspressLane",  avatar: "🥚",  d: 33600, w: 205000, a: 1760000, ds: 21, ws: 46, as: 74 },
+    { name: "TalonTornado",   avatar: "🦃",  d: 27450, w: 233700, a: 3320000, ds: 16, ws: 50, as: 108 },
+    { name: "CoopKing",       avatar: "🐓",  d: 20100, w: 167400, a: 2860000, ds: 11, ws: 38, as: 99 },
+    { name: "GoldenYolk",     avatar: "🌟",  d: 23900, w: 188200, a: 2420000, ds: 13, ws: 42, as: 90 },
+    { name: "ScrambleMaster", avatar: "🍳",  d: 18450, w: 120500, a: 1890000, ds: 10, ws: 30, as: 78 },
+    { name: "MidnightCluck",  avatar: "🌙",  d: 15700, w: 98900,  a: 1540000, ds: 8,  ws: 25, as: 69 }
+  ];
+
+  var PERIOD_KEYS = {
+    daily:   { score: "d", streak: "ds" },
+    weekly:  { score: "w", streak: "ws" },
+    alltime: { score: "a", streak: "as" }
   };
 
-  var LEADERBOARD = [
-    { rank: 1,  name: "KFC_Slayer",    score: 48200, streak: 32, avatar: "🐔" },
-    { rank: 2,  name: "RoadRunner99",  score: 41750, streak: 28, avatar: "🦅" },
-    { rank: 3,  name: "CrispyWings",   score: 37100, streak: 24, avatar: "🔥" },
-    { rank: 4,  name: "NuggetKing",    score: 31480, streak: 19, avatar: "👑" },
-    { rank: 5,  name: "FeatherFury",   score: 28900, streak: 17, avatar: "⚡" },
-    { rank: 6,  name: "GrillMaster_X", score: 25340, streak: 14, avatar: "🎯" },
-    { rank: 7,  name: "BoldBeak",      score: 22710, streak: 12, avatar: "🏆" },
-    { rank: 8,  name: "HotSauce_Pro",  score: 19850, streak: 10, avatar: "🌶️" },
-    { rank: 9,  name: "WildWattle",    score: 17220, streak: 9,  avatar: "💥" },
-    { rank: 10, name: "CluckChampion", score: 14600, streak: 7,  avatar: "🎮" }
-  ];
+  function leaderboardFor(period) {
+    var keys = PERIOD_KEYS[period] || PERIOD_KEYS.daily;
+    return PLAYERS
+      .map(function (p) {
+        return { name: p.name, avatar: p.avatar, score: p[keys.score], streak: p[keys.streak] };
+      })
+      .sort(function (a, b) { return b.score - a.score; })
+      .slice(0, 10)
+      .map(function (p, i) { p.rank = i + 1; return p; });
+  }
 
   var MULTIPLIERS = [1, 2, 4, 8, 16, 32, 64, 128];
 
@@ -335,30 +158,58 @@
   }
 
   /* ─── Leaderboard ────────────────────────────────────────────────────── */
-  function initLeaderboard() {
+  var currentPeriod = "daily";
+
+  function rowHTML(p) {
+    var rankCell;
+    if (p.rank <= 3) {
+      var bg = p.rank === 1 ? "#C8F100" : p.rank === 2 ? "rgba(200,241,0,0.3)" : "rgba(255,107,0,0.2)";
+      var color = p.rank === 1 ? "#05090A" : "#EEFAF0";
+      rankCell = '<div><span class="board__rank-badge" style="background:' + bg + ';color:' + color + '">' + p.rank + "</span></div>";
+    } else {
+      rankCell = '<div><span class="board__rank-num">' + String(p.rank).padStart(2, "0") + "</span></div>";
+    }
+    var nameCls = "board__name" + (p.rank === 1 ? " board__name--first" : "");
+    return '<div class="board__row" role="row">' +
+      rankCell +
+      '<div class="board__player"><span class="board__avatar" aria-hidden="true">' + p.avatar + '</span>' +
+        '<span class="' + nameCls + '">' + p.name + "</span></div>" +
+      '<div class="board__streak"><span>🔥 ' + p.streak + "</span></div>" +
+      '<div class="board__score" data-target="' + p.score + '">0</div>' +
+    "</div>";
+  }
+
+  function renderBoard(period, animate) {
+    currentPeriod = period;
     var rows = document.getElementById("board-rows");
-    LEADERBOARD.forEach(function (p) {
-      var row = document.createElement("div");
-      row.className = "board__row";
-      row.setAttribute("role", "row");
+    rows.innerHTML = leaderboardFor(period).map(rowHTML).join("");
+    if (animate) animateScores();
+  }
 
-      var rankCell;
-      if (p.rank <= 3) {
-        var bg = p.rank === 1 ? "#C8F100" : p.rank === 2 ? "rgba(200,241,0,0.3)" : "rgba(255,107,0,0.2)";
-        var color = p.rank === 1 ? "#05090A" : "#EEFAF0";
-        rankCell = '<div><span class="board__rank-badge" style="background:' + bg + ';color:' + color + '">' + p.rank + "</span></div>";
-      } else {
-        rankCell = '<div><span class="board__rank-num">' + String(p.rank).padStart(2, "0") + "</span></div>";
-      }
+  function animateScores() {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.querySelectorAll(".board__score").forEach(function (s, i) {
+      var target = parseInt(s.getAttribute("data-target"), 10);
+      if (reduce) { s.textContent = target.toLocaleString(); return; }
+      setTimeout(function () { countUp(s, target); }, i * 60);
+    });
+  }
 
-      var nameCls = "board__name" + (p.rank === 1 ? " board__name--first" : "");
-      row.innerHTML =
-        rankCell +
-        '<div class="board__player"><span class="board__avatar" aria-hidden="true">' + p.avatar + '</span>' +
-          '<span class="' + nameCls + '">' + p.name + "</span></div>" +
-        '<div class="board__streak"><span>🔥 ' + p.streak + "</span></div>" +
-        '<div class="board__score" data-target="' + p.score + '">0</div>';
-      rows.appendChild(row);
+  function initLeaderboard() {
+    renderBoard("daily", false);
+
+    var tabs = document.querySelectorAll(".tabs__btn");
+    tabs.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var period = btn.getAttribute("data-tab");
+        if (period === currentPeriod) return;
+        tabs.forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle("is-active", active);
+          b.setAttribute("aria-selected", active ? "true" : "false");
+        });
+        renderBoard(period, true);
+      });
     });
   }
 

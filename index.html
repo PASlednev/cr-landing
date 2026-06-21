@@ -9,7 +9,7 @@
   <meta name="keywords" content="CluckRun, chicken road, crash game, cross the road, multiplier game, online casino game, play now" />
   <meta name="author" content="CluckRun" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#05090A" />
+  <meta name="theme-color" content="#0F1619" />
   <link rel="canonical" href="https://cluckrun.example/" />
 
   <!-- Open Graph -->
@@ -65,9 +65,10 @@
       </a>
 
       <nav class="nav__links" aria-label="Primary">
+        <a href="#demo" data-i18n="nav.4">Demo</a>
         <a href="#gameplay" data-i18n="nav.0">Gameplay</a>
         <a href="#leaderboard" data-i18n="nav.1">Leaderboard</a>
-        <a href="#how-to-win" data-i18n="nav.2">How to Win</a>
+        <a href="#strategies" data-i18n="nav.2">Winning Strategies</a>
         <a href="#faq" data-i18n="nav.3">FAQ</a>
       </nav>
 
@@ -94,9 +95,10 @@
 
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#demo" data-i18n="nav.4">Demo</a>
       <a href="#gameplay" data-i18n="nav.0">Gameplay</a>
       <a href="#leaderboard" data-i18n="nav.1">Leaderboard</a>
-      <a href="#how-to-win" data-i18n="nav.2">How to Win</a>
+      <a href="#strategies" data-i18n="nav.2">Winning Strategies</a>
       <a href="#faq" data-i18n="nav.3">FAQ</a>
       <a href="#play" class="btn btn--play mobile-menu__cta" data-i18n="playNow">Play Now</a>
     </div>
@@ -132,45 +134,10 @@
             <span data-i18n="playNow">Play Now</span>
             <span class="btn__arrow" aria-hidden="true">→</span>
           </a>
-          <span class="hero__note" data-i18n="noDownload">No download required</span>
-        </div>
-
-        <div class="demo anim anim--up" data-anim-delay="500">
-          <figure class="demo__frame">
-            <figcaption class="demo__bar">
-              <span class="demo__live">
-                <span class="demo__dot" aria-hidden="true"></span>
-                <span>Live Demo</span>
-              </span>
-              <span class="demo__url">chicken-road.inout.games</span>
-            </figcaption>
-            <div class="demo__video">
-              <iframe
-                src="https://chicken-road.inout.games/api/modes/game?gameMode=chicken-road&operatorId=ee2013ed-e1f0-4d6e-97d2-f36619e2eb52&authToken=e3e81c65-1533-4558-993c-ee8dc8e6bf66&currency=USD&lang=en&theme=&gameCustomizationId=&lobbyUrl="
-                title="Chicken Road Demo"
-                loading="lazy"
-                allowfullscreen></iframe>
-            </div>
-          </figure>
-
-          <dl class="stats">
-            <div class="stats__item">
-              <dd class="stats__value">124K+</dd>
-              <dt class="stats__label" data-i18n="stats.0">Active Players</dt>
-            </div>
-            <div class="stats__item">
-              <dd class="stats__value">$8.2M</dd>
-              <dt class="stats__label" data-i18n="stats.1">Total Paid Out</dt>
-            </div>
-            <div class="stats__item">
-              <dd class="stats__value">128×</dd>
-              <dt class="stats__label" data-i18n="stats.2">Max Multiplier</dt>
-            </div>
-            <div class="stats__item">
-              <dd class="stats__value">22 min</dd>
-              <dt class="stats__label" data-i18n="stats.3">Avg. Session</dt>
-            </div>
-          </dl>
+          <a href="#demo" class="btn btn--demo">
+            <span aria-hidden="true">▶</span>
+            <span data-i18n="playDemo">Play Demo</span>
+          </a>
         </div>
       </div>
 
@@ -219,10 +186,61 @@
       </div>
     </section>
 
+    <!-- ─── Demo ──────────────────────────────────────────────────────── -->
+    <section id="demo" class="section demo-section">
+      <div class="container container--6xl">
+        <header class="section__head section__head--block anim anim--up">
+          <p class="tag tag--lime" data-i18n="demoTag">// Live Demo</p>
+          <h2 class="section__title" data-i18n="demoTitle">Try the Demo</h2>
+        </header>
+
+        <p class="demo-section__desc anim anim--up" data-anim-delay="100" data-i18n="demoDesc">
+          CluckRun is a fast-paced crash game from InOut Games with simple yet gripping mechanics: you steer a chicken that boosts your bet with every step it takes across the road. Pick from four difficulty modes and play with a generous 98% RTP. Take it for a spin in the live demo below — no sign-up, no risk.
+        </p>
+
+        <div class="demo anim anim--up" data-anim-delay="200">
+          <figure class="demo__frame">
+            <figcaption class="demo__bar">
+              <span class="demo__live">
+                <span class="demo__dot" aria-hidden="true"></span>
+                <span data-i18n="demoLive">Live Demo</span>
+              </span>
+            </figcaption>
+            <div class="demo__video">
+              <iframe
+                src="https://chicken-road.inout.games/api/modes/game?gameMode=chicken-road&operatorId=ee2013ed-e1f0-4d6e-97d2-f36619e2eb52&authToken=e3e81c65-1533-4558-993c-ee8dc8e6bf66&currency=USD&lang=en&theme=&gameCustomizationId=&lobbyUrl="
+                title="Chicken Road Demo"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+          </figure>
+
+          <dl class="stats">
+            <div class="stats__item">
+              <dd class="stats__value">124K+</dd>
+              <dt class="stats__label" data-i18n="stats.0">Active Players</dt>
+            </div>
+            <div class="stats__item">
+              <dd class="stats__value">$8.2M</dd>
+              <dt class="stats__label" data-i18n="stats.1">Total Paid Out</dt>
+            </div>
+            <div class="stats__item">
+              <dd class="stats__value">128×</dd>
+              <dt class="stats__label" data-i18n="stats.2">Max Multiplier</dt>
+            </div>
+            <div class="stats__item">
+              <dd class="stats__value">22 min</dd>
+              <dt class="stats__label" data-i18n="stats.3">Avg. Session</dt>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── Leaderboard ───────────────────────────────────────────────── -->
     <section id="leaderboard" class="section leaderboard">
       <span class="leaderboard__bar" aria-hidden="true"></span>
-      <div class="container container--4xl">
+      <div class="container container--6xl">
         <header class="section__head section__head--block anim anim--right">
           <p class="tag tag--orange" data-i18n="lbTag">// Top Runners</p>
           <h2 class="section__title" data-i18n="lbTitle">Leaderboard</h2>
@@ -254,36 +272,166 @@
       </div>
     </section>
 
-    <!-- ─── How to Win ────────────────────────────────────────────────── -->
-    <section id="how-to-win" class="section howto">
+    <!-- ─── Winning Strategies ───────────────────────────────────────── -->
+    <section id="strategies" class="section strat">
       <div class="container container--6xl">
         <header class="section__head section__head--block anim anim--up">
-          <p class="tag tag--lime" data-i18n="howTag">// Pro Strategy</p>
-          <h2 class="section__title" data-i18n="howTitle">How to Win</h2>
+          <p class="tag tag--orange" data-i18n="strat.tag">// Level-Based Strategies</p>
+          <h2 class="section__title" data-i18n="strat.title">Winning Strategies</h2>
         </header>
 
-        <ul class="tips">
-          <li class="tips__item anim anim--up" data-anim-delay="0">
-            <span class="tips__icon" aria-hidden="true">📈</span>
-            <h3 class="tips__title" data-i18n="tips.0.title">Start Small</h3>
-            <p class="tips__body" data-i18n="tips.0.body">Build your streak on low stakes before scaling up. Consistency beats one big run.</p>
-          </li>
-          <li class="tips__item anim anim--up" data-anim-delay="100">
-            <span class="tips__icon" aria-hidden="true">🧠</span>
-            <h3 class="tips__title" data-i18n="tips.1.title">Know When to Quit</h3>
-            <p class="tips__body" data-i18n="tips.1.body">The house edge increases after lane 6. Most top earners cash out between lanes 4–5.</p>
-          </li>
-          <li class="tips__item anim anim--up" data-anim-delay="200">
-            <span class="tips__icon" aria-hidden="true">👀</span>
-            <h3 class="tips__title" data-i18n="tips.2.title">Watch the Heat</h3>
-            <p class="tips__body" data-i18n="tips.2.body">Oven speed increases with your multiplier. Sharp eyes catch the pattern.</p>
-          </li>
-          <li class="tips__item anim anim--up" data-anim-delay="300">
-            <span class="tips__icon" aria-hidden="true">🎁</span>
-            <h3 class="tips__title" data-i18n="tips.3.title">Daily Bonus</h3>
-            <p class="tips__body" data-i18n="tips.3.body">Log in each day for a free bonus round. Seven-day streaks unlock exclusive multipliers.</p>
-          </li>
-        </ul>
+        <!-- Level 1 -->
+        <article class="strat__level anim anim--up">
+          <div class="strat__head">
+            <span class="strat__level-num" data-i18n="strat.levels.0.tier">Level 01</span>
+            <h3 class="strat__name" data-i18n="strat.levels.0.name">The Two-Step Grind</h3>
+            <span class="strat__risk strat__risk--low" data-i18n="strat.levels.0.risk">Low Risk</span>
+          </div>
+          <p class="strat__intro" data-i18n="strat.levels.0.intro">A grounding routine built for newcomers and anyone slowly growing a balance. It leans on the strong odds of the opening moves and stays well clear of the risky far lanes where most runs fall apart. Slow, steady, and built to last.</p>
+          <ol class="steps strat__steps">
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">01</span>
+              <h4 class="steps__title" data-i18n="strat.levels.0.steps.0.title">Lock In Easy Mode</h4>
+              <p class="steps__desc" data-i18n="strat.levels.0.steps.0.desc">Stay on the Easy setting and never switch away. The lower trap frequency is exactly what keeps this routine mathematically sound.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">02</span>
+              <h4 class="steps__title" data-i18n="strat.levels.0.steps.1.title">Keep a Fixed Stake</h4>
+              <p class="steps__desc" data-i18n="strat.levels.0.steps.1.desc">Wager a flat 1% of your balance every round — $1 on a $100 bank, $5 on $500. Same amount, round after round.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">03</span>
+              <h4 class="steps__title" data-i18n="strat.levels.0.steps.2.title">Advance Two Lanes</h4>
+              <p class="steps__desc" data-i18n="strat.levels.0.steps.2.desc">No more, no fewer. Crossing precisely two lanes is where the entire edge of this method lives.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">04</span>
+              <h4 class="steps__title" data-i18n="strat.levels.0.steps.3.title">Collect at ~1.2x–1.3x</h4>
+              <p class="steps__desc" data-i18n="strat.levels.0.steps.3.desc">After two lanes the multiplier usually lands here. Bank it instantly, then repeat with identical settings — no second-guessing.</p>
+            </li>
+          </ol>
+        </article>
+
+        <!-- Level 2 -->
+        <article class="strat__level anim anim--up">
+          <div class="strat__head">
+            <span class="strat__level-num" data-i18n="strat.levels.1.tier">Level 02</span>
+            <h3 class="strat__name" data-i18n="strat.levels.1.name">The Gear Shifter</h3>
+            <span class="strat__risk strat__risk--mid" data-i18n="strat.levels.1.risk">Medium Risk</span>
+          </div>
+          <p class="strat__intro" data-i18n="strat.levels.1.intro">A measured step up that only ever risks winnings, never your original deposit. Bigger wagers are funded purely by profit, and the moment a run busts you drop back a gear to regain control — like working through a manual gearbox.</p>
+          <ol class="steps strat__steps steps--mid">
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">01</span>
+              <h4 class="steps__title" data-i18n="strat.levels.1.steps.0.title">Start in First Gear</h4>
+              <p class="steps__desc" data-i18n="strat.levels.1.steps.0.desc">Open with your base stake using the Two-Step Grind: Easy mode, two lanes, cash out. Keep grinding until you've banked roughly $10 in pure profit.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">02</span>
+              <h4 class="steps__title" data-i18n="strat.levels.1.steps.1.title">Shift to Second Gear</h4>
+              <p class="steps__desc" data-i18n="strat.levels.1.steps.1.desc">Now bet with that $10 profit only. Move to Medium difficulty, push for four or five lanes, and aim for a 2x–3x return. Lose the profit? Drop straight back to First Gear.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">03</span>
+              <h4 class="steps__title" data-i18n="strat.levels.1.steps.2.title">Engage Third Gear</h4>
+              <p class="steps__desc" data-i18n="strat.levels.1.steps.2.desc">Enter only once profit has doubled to about $20. Raise the stake, stay on Medium, and chase five or six lanes for a 3x–5x payout. Any heavy loss sends you back down.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">04</span>
+              <h4 class="steps__title" data-i18n="strat.levels.1.steps.3.title">Never Skip a Gear</h4>
+              <p class="steps__desc" data-i18n="strat.levels.1.steps.3.desc">Always climb one gear at a time and downshift the instant a run goes wrong. Jumping ahead on your base bankroll is gambling, not strategy.</p>
+            </li>
+          </ol>
+        </article>
+
+        <!-- Level 3 -->
+        <article class="strat__level anim anim--up">
+          <div class="strat__head">
+            <span class="strat__level-num" data-i18n="strat.levels.2.tier">Level 03</span>
+            <h3 class="strat__name" data-i18n="strat.levels.2.name">The Hardcore Hunter</h3>
+            <span class="strat__risk strat__risk--high" data-i18n="strat.levels.2.risk">High Risk</span>
+          </div>
+          <p class="strat__intro" data-i18n="strat.levels.2.intro">An all-out volatility play for thick-skinned players. Expect to lose round after round — droughts of twenty busts in a row are normal — but a single deep crossing can repay every loss and still leave you well ahead. Patience is survival.</p>
+          <ol class="steps strat__steps steps--high">
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">01</span>
+              <h4 class="steps__title" data-i18n="strat.levels.2.steps.0.title">Crank Up the Difficulty</h4>
+              <p class="steps__desc" data-i18n="strat.levels.2.steps.0.desc">Run on Hard or Hardcore only. Medium simply won't produce the towering multipliers this approach depends on.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">02</span>
+              <h4 class="steps__title" data-i18n="strat.levels.2.steps.1.title">Stake Tiny Amounts</h4>
+              <p class="steps__desc" data-i18n="strat.levels.2.steps.1.desc">Risk no more than 0.5% of your balance per round — just $5 on a $1,000 bank. Small bets are what keep you alive through the long dry spells.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">03</span>
+              <h4 class="steps__title" data-i18n="strat.levels.2.steps.2.title">Hunt the Big Run</h4>
+              <p class="steps__desc" data-i18n="strat.levels.2.steps.2.desc">Forget small wins. Push for ten-plus lanes and target multipliers of 25x, 50x, 100x or beyond.</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__corner" aria-hidden="true"></span>
+              <span class="steps__num">04</span>
+              <h4 class="steps__title" data-i18n="strat.levels.2.steps.3.title">Set a Target and Hold It</h4>
+              <p class="steps__desc" data-i18n="strat.levels.2.steps.3.desc">Red screens are just the cost of hunting — never let them rattle you or change your stake. Decide your exit before each round and honour it the moment you arrive.</p>
+            </li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─── FAQ (placeholder) ────────────────────────────────────────── -->
+    <section id="faq" class="section faq">
+      <div class="container container--6xl">
+        <header class="section__head section__head--block anim anim--up">
+          <p class="tag tag--lime" data-i18n="faqTag">// Questions &amp; Answers</p>
+          <h2 class="section__title" data-i18n="faqTitle">FAQ</h2>
+        </header>
+
+        <div class="faq-grid">
+          <article class="faq-card anim anim--up">
+            <h3 class="faq-card__q" data-i18n="faqItems.0.q">What is the minimum deposit to start playing?</h3>
+            <p class="faq-card__a" data-i18n="faqItems.0.a">You can fund your account with any amount starting from just $10, so there's no need to commit a big bankroll to get started.</p>
+          </article>
+          <article class="faq-card anim anim--up" data-anim-delay="80">
+            <h3 class="faq-card__q" data-i18n="faqItems.1.q">What is the RTP (Return to Player) of CluckRun?</h3>
+            <p class="faq-card__a" data-i18n="faqItems.1.a">CluckRun runs at a high 98% RTP — one of the most generous rates among crash games — and it stays at 98% across every difficulty level. Over time, that means 98% of all wagers flow back to players.</p>
+          </article>
+          <article class="faq-card anim anim--up">
+            <h3 class="faq-card__q" data-i18n="faqItems.2.q">How do I withdraw my winnings?</h3>
+            <p class="faq-card__a" data-i18n="faqItems.2.a">Cashing out is fast and flexible. You can withdraw using any of the payment methods popular across Europe and the US — Visa, Mastercard, Maestro, PayPal, Skrill, Neteller, Trustly, Paysafecard, Apple Pay, Google Pay and SEPA bank transfer.</p>
+          </article>
+          <article class="faq-card anim anim--up" data-anim-delay="80">
+            <h3 class="faq-card__q" data-i18n="faqItems.3.q">How does the game actually work?</h3>
+            <p class="faq-card__a" data-i18n="faqItems.3.a">You guide a chicken across a busy road one lane at a time. Every lane it clears bumps up your multiplier — hit CASH OUT whenever you want to bank your winnings, but if the chicken gets caught first, the round is lost.</p>
+          </article>
+          <article class="faq-card anim anim--up">
+            <h3 class="faq-card__q" data-i18n="faqItems.4.q">Are there different difficulty levels?</h3>
+            <p class="faq-card__a" data-i18n="faqItems.4.a">Yes — there are four modes: Easy, Medium, Hard and Hardcore. Higher difficulty means fewer safe lanes but far bigger potential multipliers, while the 98% RTP stays the same in every mode.</p>
+          </article>
+          <article class="faq-card anim anim--up" data-anim-delay="80">
+            <h3 class="faq-card__q" data-i18n="faqItems.5.q">Is CluckRun fair and safe to play?</h3>
+            <p class="faq-card__a" data-i18n="faqItems.5.a">Every round uses a provably fair system from InOut Games, so each result is generated randomly and can be independently verified. Neither the player nor the operator can predict or influence where the chicken stops.</p>
+          </article>
+          <article class="faq-card anim anim--up">
+            <h3 class="faq-card__q" data-i18n="faqItems.6.q">Do I need to download an app or install anything?</h3>
+            <p class="faq-card__a" data-i18n="faqItems.6.a">No. CluckRun runs straight in your browser on both desktop and mobile — no app store, no plugins, no installs. Just open the page and start playing.</p>
+          </article>
+          <article class="faq-card anim anim--up" data-anim-delay="80">
+            <h3 class="faq-card__q" data-i18n="faqItems.7.q">Can I try the game before betting real money?</h3>
+            <p class="faq-card__a" data-i18n="faqItems.7.a">Of course. Use the live demo higher up the page to get a feel for the mechanics and difficulty modes at zero risk, then switch to real play whenever you're ready.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -315,6 +463,7 @@
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
