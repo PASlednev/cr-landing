@@ -150,10 +150,18 @@
   /* ─── Scrolled nav ───────────────────────────────────────────────────── */
   function initScroll() {
     var header = document.getElementById("site-header");
+    var toTop = document.getElementById("to-top");
     function onScroll() {
       header.classList.toggle("is-scrolled", window.scrollY > 40);
+      if (toTop) toTop.classList.toggle("is-visible", window.scrollY > 400);
     }
     window.addEventListener("scroll", onScroll, { passive: true });
+    if (toTop) {
+      toTop.addEventListener("click", function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+      });
+    }
     onScroll();
   }
 
