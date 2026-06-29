@@ -4,13 +4,35 @@
   /* ─── i18n data ──────────────────────────────────────────────────────── */
   /* Translation strings live in translations.js (loaded first) as global `T`. */
   var LANGUAGES = [
-    { code: "en", label: "English",   flag: "🇬🇧" },
-    { code: "ru", label: "Русский",   flag: "🇷🇺" },
-    { code: "de", label: "Deutsch",   flag: "🇩🇪" },
-    { code: "fr", label: "Français",  flag: "🇫🇷" },
-    { code: "es", label: "Español",   flag: "🇪🇸" },
-    { code: "pt", label: "Português", flag: "🇵🇹" }
+    { code: "en", label: "English",   flag: "🇬🇧", ogLocale: "en_US", hreflang: "en" },
+    { code: "ru", label: "Русский",   flag: "🇷🇺", ogLocale: "ru_RU", hreflang: "ru" },
+    { code: "de", label: "Deutsch",   flag: "🇩🇪", ogLocale: "de_DE", hreflang: "de" },
+    { code: "fr", label: "Français",  flag: "🇫🇷", ogLocale: "fr_FR", hreflang: "fr" },
+    { code: "es", label: "Español",   flag: "🇪🇸", ogLocale: "es_ES", hreflang: "es" },
+    { code: "pt", label: "Português", flag: "🇵🇹", ogLocale: "pt_BR", hreflang: "pt" }
   ];
+
+  var SITE_URL = "https://chickenroadstrategy.com/";
+
+  /* Build the canonical/og URL for a given language (en = bare root). */
+  function urlForLang(code) {
+    return code === "en" ? SITE_URL : SITE_URL + "?lang=" + code;
+  }
+
+  /* Set the content attribute of a <meta>/<link> by selector, if present. */
+  function setMeta(selector, attr, value) {
+    var el = document.querySelector(selector);
+    if (el) el.setAttribute(attr, value);
+  }
+
+  /* Initial language: ?lang= param wins, then browser language, then English. */
+  function detectLang() {
+    var valid = LANGUAGES.map(function (l) { return l.code; });
+    var q = new URLSearchParams(window.location.search).get("lang");
+    if (q && valid.indexOf(q) !== -1) return q;
+    var nav = (navigator.language || "en").slice(0, 2).toLowerCase();
+    return valid.indexOf(nav) !== -1 ? nav : "en";
+  }
 
   /* Player pool with per-period scores & streaks.
      Invariant for every player: alltime >= weekly >= daily (and same for streaks),
@@ -73,6 +95,24 @@
     document.documentElement.lang = code;
 
     var current = LANGUAGES.filter(function (l) { return l.code === code; })[0];
+
+    // localized SEO meta tags
+    if (t.meta) {
+      if (t.meta.title) {
+        document.title = t.meta.title;
+        setMeta('meta[property="og:title"]', "content", t.meta.title);
+        setMeta('meta[name="twitter:title"]', "content", t.meta.title);
+      }
+      if (t.meta.description) {
+        setMeta('meta[name="description"]', "content", t.meta.description);
+        setMeta('meta[property="og:description"]', "content", t.meta.description);
+        setMeta('meta[name="twitter:description"]', "content", t.meta.description);
+      }
+    }
+    var pageUrl = urlForLang(code);
+    setMeta('link[rel="canonical"]', "href", pageUrl);
+    setMeta('meta[property="og:url"]', "content", pageUrl);
+    if (current) setMeta('meta[property="og:locale"]', "content", current.ogLocale);
     document.getElementById("lang-flag").textContent = current.flag;
     document.getElementById("lang-code").textContent = current.code.toUpperCase();
 
@@ -103,6 +143,17 @@
         '<span class="check" hidden>✓</span>';
       btn.addEventListener("click", function () {
         currentCode = l.code;
+        // give each language its own shareable/indexable URL (?lang=xx).
+        // Use a relative URL so it also works on localhost / file:// (an
+        // absolute cross-origin URL would throw and abort the handler).
+        if (window.history && window.history.replaceState) {
+          try {
+            var rel = l.code === "en"
+              ? window.location.pathname
+              : window.location.pathname + "?lang=" + l.code;
+            window.history.replaceState(null, "", rel);
+          } catch (e) { /* ignore (e.g. unsupported context) */ }
+        }
         applyLang(l.code);
         close();
       });
@@ -295,7 +346,7 @@
     initScroll();
     initLeaderboard();
     initChart();
-    applyLang("en");
+    applyLang(detectLang());
     initObserver();
   }
 

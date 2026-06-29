@@ -3,6 +3,10 @@
    reads the global `T`. Keep keys in sync across every language. */
 var T = {
   en: {
+    meta: {
+      title: "Chicken Road — Winning Strategy & Free Demo | Crash Game",
+      description: "Master Chicken Road, the fiery crash game. Learn proven Chicken Road strategies, play the free demo, climb the leaderboard and cash out before the heat catches you."
+    },
     nav: ["Gameplay", "Leaderboard", "Winning Strategies", "FAQ", "Demo"],
     playNow: "Play Now",
     playDemo: "Play Demo",
@@ -95,6 +99,10 @@ var T = {
     }
   },
   ru: {
+    meta: {
+      title: "Chicken Road — стратегия и бесплатное демо | Краш-игра",
+      description: "Освойте Chicken Road — огненную краш-игру. Рабочие стратегии Chicken Road, бесплатное демо, таблица лидеров. Заберите выигрыш, пока не поздно."
+    },
     nav: ["Геймплей", "Лидерборд", "Выигрышные стратегии", "FAQ", "Демо"],
     playNow: "Играть",
     playDemo: "Смотреть демо",
@@ -187,6 +195,10 @@ var T = {
     }
   },
   de: {
+    meta: {
+      title: "Chicken Road — Gewinnstrategie & Gratis-Demo | Crash-Spiel",
+      description: "Meistere Chicken Road, das feurige Crash-Spiel. Bewährte Chicken-Road-Strategien, kostenlose Demo und Bestenliste – casht aus, bevor es brennt."
+    },
     nav: ["Gameplay", "Rangliste", "Gewinnstrategien", "FAQ", "Demo"],
     playNow: "Jetzt spielen",
     playDemo: "Demo spielen",
@@ -279,6 +291,10 @@ var T = {
     }
   },
   fr: {
+    meta: {
+      title: "Chicken Road — Stratégie Gagnante & Démo Gratuite | Jeu Crash",
+      description: "Maîtrisez Chicken Road, le jeu crash brûlant. Stratégies éprouvées, démo gratuite et classement — encaissez avant que ça chauffe."
+    },
     nav: ["Gameplay", "Classement", "Stratégies gagnantes", "FAQ", "Démo"],
     playNow: "Jouer maintenant",
     playDemo: "Voir la démo",
@@ -371,17 +387,21 @@ var T = {
     }
   },
   es: {
+    meta: {
+      title: "Chicken Road — Estrategia y Demo Gratis | Juego Crash",
+      description: "Domina Chicken Road, el juego crash (el juego de la gallina). Estrategias probadas, demo gratis y tabla de líderes. Retira antes de que sea tarde."
+    },
     nav: ["Gameplay", "Clasificación", "Estrategias ganadoras", "FAQ", "Demo"],
     playNow: "Jugar ahora",
     playDemo: "Ver la demo",
     noDownload: "Sin descarga",
     demoLive: "Demo en vivo",
     demoTag: "// Demo en vivo", demoTitle: "Prueba la demo",
-    demoDesc: "Chicken road es un juego crash trepidante de InOut Games con mecánicas sencillas pero adictivas: controlas una gallina que aumenta tu apuesta con cada paso que da por la carretera. Elige entre cuatro niveles de dificultad y juega con un generoso RTP del 98 %. Pruébalo en la demo en vivo de abajo, sin registro y sin riesgo.",
+    demoDesc: "Chicken Road (también conocido como el juego de la gallina) es un juego crash trepidante de InOut Games con mecánicas sencillas pero adictivas: controlas una gallina que aumenta tu apuesta con cada paso que da por la carretera. Elige entre cuatro niveles de dificultad y juega con un generoso RTP del 98 %. Pruébalo en la demo en vivo de abajo, sin registro y sin riesgo.",
     liveBadge: "En vivo · 3.241 jugadores online",
     heroTitle1: "Cruza la", heroHighlight1: "Calle.",
     heroTitle2: "Reclama el", heroHighlight2: "Premio.",
-    heroSub: "Guía a tu pollo a través de carriles ardientes. Cada cruce multiplica tu apuesta. Retira antes de que el calor te alcance — o atrévete a ir más lejos.",
+    heroSub: "Chicken Road, el juego de la gallina: guía a tu pollo a través de carriles ardientes. Cada cruce multiplica tu apuesta. Retira antes de que el calor te alcance — o atrévete a ir más lejos.",
     stats: ["Jugadores activos", "Total pagado", "Multiplicador máx.", "Sesión media"],
     gameplayTag: "// Cómo funciona", gameplayTitle: "Gameplay",
     multLabel: "Progresión del multiplicador por carril",
@@ -463,17 +483,21 @@ var T = {
     }
   },
   pt: {
+    meta: {
+      title: "Chicken Road — Estratégia e Demo Grátis | Jogo da Galinha",
+      description: "Domine o Chicken Road, o jogo crash (jogo da galinha). Estratégias que funcionam, demo grátis e ranking. Saque antes que a galinha queime."
+    },
     nav: ["Gameplay", "Classificação", "Estratégias vencedoras", "FAQ", "Demo"],
     playNow: "Jogar agora",
     playDemo: "Ver a demo",
     noDownload: "Sem download",
     demoLive: "Demo ao vivo",
     demoTag: "// Demo ao vivo", demoTitle: "Experimente a demo",
-    demoDesc: "Chicken road é um jogo crash dinâmico da InOut Games com mecânicas simples, mas viciantes: você controla uma galinha que aumenta sua aposta a cada passo pela estrada. Escolha entre quatro níveis de dificuldade e jogue com um generoso RTP de 98%. Experimente na demo ao vivo abaixo — sem cadastro e sem risco.",
+    demoDesc: "Chicken Road (também conhecido como jogo da galinha) é um jogo crash dinâmico da InOut Games com mecânicas simples, mas viciantes: você controla uma galinha que aumenta sua aposta a cada passo pela estrada. Escolha entre quatro níveis de dificuldade e jogue com um generoso RTP de 98%. Experimente na demo ao vivo abaixo — sem cadastro e sem risco.",
     liveBadge: "Ao vivo · 3.241 jogadores online",
     heroTitle1: "Atravessa a", heroHighlight1: "Estrada.",
     heroTitle2: "Conquista o", heroHighlight2: "Prémio.",
-    heroSub: "Guia o teu frango pelas faixas em chamas. Cada travessia multiplica a tua aposta. Levanta antes que o calor te apanhe — ou arrisca ir mais longe.",
+    heroSub: "Chicken Road, o jogo da galinha: guia o teu frango pelas faixas em chamas. Cada travessia multiplica a tua aposta. Levanta antes que o calor te apanhe — ou arrisca ir mais longe.",
     stats: ["Jogadores ativos", "Total pago", "Multiplicador máx.", "Sessão média"],
     gameplayTag: "// Como funciona", gameplayTitle: "Gameplay",
     multLabel: "Progressão do multiplicador por faixa",
