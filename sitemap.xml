@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chickenroadstrategy.com/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chickenroadstrategy.com/" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://chickenroadstrategy.com/hi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chickenroadstrategy.com/" />
     <image:image>
       <image:loc>https://chickenroadstrategy.com/assets/og-image.png</image:loc>
       <image:title>Chicken Road — the fiery crash game</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://chickenroadstrategy.com/chicken-road-app/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chickenroadstrategy.com/chicken-road-app/" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://chickenroadstrategy.com/hi/chicken-road-app/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chickenroadstrategy.com/chicken-road-app/" />
+  </url>
+  <url>
+    <loc>https://chickenroadstrategy.com/chicken-road-scam-legit/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chickenroadstrategy.com/chicken-road-scam-legit/" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://chickenroadstrategy.com/hi/chicken-road-scam-legit/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chickenroadstrategy.com/chicken-road-scam-legit/" />
+  </url>
+  <url>
+    <loc>https://chickenroadstrategy.com/chicken-road-2/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chickenroadstrategy.com/chicken-road-2/" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://chickenroadstrategy.com/hi/chicken-road-2/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chickenroadstrategy.com/chicken-road-2/" />
+  </url>
+  <url>
+    <loc>https://chickenroadstrategy.com/chicken-road-demo/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chickenroadstrategy.com/chicken-road-demo/" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://chickenroadstrategy.com/hi/chicken-road-demo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chickenroadstrategy.com/chicken-road-demo/" />
+  </url>
+  <url>
+    <loc>https://chickenroadstrategy.com/chicken-road-casino/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chickenroadstrategy.com/chicken-road-casino/" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://chickenroadstrategy.com/hi/chicken-road-casino/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chickenroadstrategy.com/chicken-road-casino/" />
+  </url>
+  <url>
+    <loc>https://chickenroadstrategy.com/chicken-road-bonus/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chickenroadstrategy.com/chicken-road-bonus/" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://chickenroadstrategy.com/hi/chicken-road-bonus/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chickenroadstrategy.com/chicken-road-bonus/" />
+  </url>
+  <url>
+    <loc>https://chickenroadstrategy.com/how-to-play-chicken-road/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chickenroadstrategy.com/how-to-play-chicken-road/" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://chickenroadstrategy.com/hi/how-to-play-chicken-road/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chickenroadstrategy.com/how-to-play-chicken-road/" />
   </url>
 </urlset>

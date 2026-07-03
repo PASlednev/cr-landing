@@ -4,10 +4,10 @@
 var T = {
   en: {
     meta: {
-      title: "Chicken Road — Winning Strategy & Free Demo | Crash Game",
-      description: "Master Chicken Road, the fiery crash game. Learn proven Chicken Road strategies, play the free demo, climb the leaderboard and cash out before the heat catches you."
+      title: "Chicken Road Game — Free Demo, RTP & Where to Play",
+      description: "Play the Chicken Road crash game: try the free demo, see the real RTP, learn how cash-out works, and compare where to play for real. 18+. Provably fair."
     },
-    nav: ["Gameplay", "Leaderboard", "Winning Strategies", "FAQ", "Demo"],
+    nav: ["Gameplay", "Leaderboard", "Playing Styles", "FAQ", "Demo"],
     playNow: "Play Now",
     playDemo: "Play Demo",
     noDownload: "No download required",
@@ -15,9 +15,9 @@ var T = {
     demoTag: "// Live Demo", demoTitle: "Try the Demo",
     demoDesc: "Chicken road is a fast-paced crash game from InOut Games with simple yet gripping mechanics: you steer a chicken that boosts your bet with every step it takes across the road. Pick from four difficulty modes and play with a generous 98% RTP. Take it for a spin in the live demo below — no sign-up, no risk.",
     liveBadge: "Live Now · 3,241 Players Online",
-    heroTitle1: "Cross the", heroHighlight1: "Road.",
-    heroTitle2: "Claim the", heroHighlight2: "Prize.",
-    heroSub: "Guide your chicken through fiery lanes. Each crossing multiplies your stake. Cash out before the heat catches up — or dare to go further.",
+    heroTitle1: "Play the Crash Game,", heroHighlight1: "Free Demo",
+    heroTitle2: "&", heroHighlight2: "Real RTP",
+    heroSub: "Cross the Road. Claim the Prize. The InOut crash game where you cash out before the crash. Try the free demo, check the RTP, and see where to play for real.",
     stats: ["Active Players", "Total Paid Out", "Max Multiplier", "Avg. Session"],
     gameplayTag: "// How It Works", gameplayTitle: "Gameplay",
     multLabel: "Multiplier progression per lane",
@@ -42,9 +42,9 @@ var T = {
     finalCta: "Play Now",
     disclaimer: "18+ · Gamble responsibly · T&C Apply",
     footerRight: "🔒 SSL Secured · Provably Fair",
-    partnersLabel: "Our partners",
-    partnersTitle: "Built with industry-leading partners",
-    partnersText: "Chicken Road is powered by InOut Games and developed alongside the most trusted names in iGaming. Each partner below supplies certified game engines, provably-fair technology and the secure infrastructure that keeps every crossing fast, transparent and reliable.",
+    partnersLabel: "Game provider",
+    partnersTitle: "Made by InOut Games",
+    partnersText: "Chicken Road is developed by InOut Games and distributed through licensed casino operators. On a legitimate site the game lists InOut Games as the provider and the operator shows its gaming licence — that's how you confirm you're playing the real game rather than a clone.",
     footerLinks: "© 2026 Chicken road. All rights reserved. · Privacy · Terms · Support",
     faqTag: "// Questions & Answers", faqTitle: "FAQ",
     authorTag: "// Behind the Game", authorTitle: "About the Author",
@@ -52,14 +52,11 @@ var T = {
     authorBio: "I'm Ryan Murton, and this is my project. Commercially-minded with a background in Growth/Digital Marketing and Product, I've spent years in the iGaming space — based in London and working at Midnite. I built this resource to share everything I've learned about crash games, betting strategy and how titles like Chicken Road really work, with a hands-on, data-driven approach you can actually trust.",
     authorLink: "View profile on LinkedIn",
     faqItems: [
-      { q: "What is the minimum deposit to start playing?", a: "You can fund your account with any amount starting from just $1, so there's no need to commit a big bankroll to get started." },
-      { q: "What is the RTP (Return to Player) of Chicken road?", a: "Chicken road runs at a high 98% RTP — one of the most generous rates among crash games — and it stays at 98% across every difficulty level. Over time, that means 98% of all wagers flow back to players." },
-      { q: "How do I withdraw my winnings?", a: "Cashing out is fast and flexible. You can withdraw using any of the payment methods popular across Europe and the US — Visa, Mastercard, Maestro, PayPal, Skrill, Neteller, Trustly, Paysafecard, Apple Pay, Google Pay and SEPA bank transfer." },
-      { q: "How does the game actually work?", a: "You guide a chicken across a busy road one lane at a time. Every lane it clears bumps up your multiplier — hit CASH OUT whenever you want to bank your winnings, but if the chicken gets caught first, the round is lost." },
-      { q: "Are there different difficulty levels?", a: "Yes — there are four modes: Easy, Medium, Hard and Hardcore. Higher difficulty means fewer safe lanes but far bigger potential multipliers, while the 98% RTP stays the same in every mode." },
-      { q: "Is Chicken road fair and safe to play?", a: "Every round uses a provably fair system from InOut Games, so each result is generated randomly and can be independently verified. Neither the player nor the operator can predict or influence where the chicken stops." },
-      { q: "Do I need to download an app or install anything?", a: "No. Chicken road runs straight in your browser on both desktop and mobile — no app store, no plugins, no installs. Just open the page and start playing." },
-      { q: "Can I try the game before betting real money?", a: "Of course. Use the live demo higher up the page to get a feel for the mechanics and difficulty modes at zero risk, then switch to real play whenever you're ready." }
+      { q: "What is the Chicken Road game?", a: "Chicken Road is a provably-fair crash game by InOut Games. You bet, a multiplier rises as the chicken advances, and you cash out before it crashes. Cash out in time and you win your bet times the multiplier; too late and you lose the round." },
+      { q: "Is Chicken Road real or fake?", a: "The Chicken Road game by InOut Games is real and provably fair, and you can verify each round's result. The risk is fake clone sites and apps that copy the name. Only play at licensed operators; see our legitimacy check for how to spot fakes." },
+      { q: "What is the RTP of Chicken Road?", a: "Chicken Road's RTP is around 98% (confirm the current figure with the operator). RTP is a long-run average across millions of rounds, not a guarantee for any session. Every round is independent and random." },
+      { q: "Can I play Chicken Road for free?", a: "Yes. You can play Chicken Road in demo mode with no deposit and no download. Demo uses fake money, so there are no winnings, but the game plays exactly like the real version." },
+      { q: "Where can I play Chicken Road for real money?", a: "Chicken Road is available at licensed casino operators that carry InOut Games titles. Check availability in your region and compare bonuses on our casino page. 18+; play responsibly." }
     ],
     strat: {
       tag: "// Level-Based Strategies",
