@@ -164,7 +164,27 @@
     });
   }
 
-  function init() { initBurger(); initScroll(); initReveal(); initDates(); }
+  function initLang() {
+    var btn = document.getElementById("lang-btn");
+    var menu = document.getElementById("lang-menu");
+    if (!btn || !menu) return;
+    function setOpen(o) {
+      btn.setAttribute("aria-expanded", o ? "true" : "false");
+      menu.hidden = !o;
+    }
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setOpen(menu.hidden);
+    });
+    document.addEventListener("click", function (e) {
+      if (!menu.hidden && !menu.contains(e.target) && e.target !== btn) setOpen(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setOpen(false);
+    });
+  }
+
+  function init() { initBurger(); initScroll(); initReveal(); initDates(); initLang(); }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
