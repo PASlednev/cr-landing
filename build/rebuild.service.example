@@ -1,0 +1,30 @@
+# Автопересборка лендинга по вебхуку из Directus.
+#
+#   sudo cp build/rebuild.service.example /etc/systemd/system/cr-rebuild.service
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now cr-rebuild
+#   journalctl -u cr-rebuild -f
+#
+# Путь, пользователя и node поправить под сервер.
+
+[Unit]
+Description=Пересборка cr-landing по вебхуку из Directus
+After=network.target
+
+[Service]
+Type=simple
+User=paul
+WorkingDirectory=/home/paul/work/gambling/cr-landing
+ExecStart=/usr/bin/node build/rebuild-server.mjs
+Restart=always
+RestartSec=5
+
+# Секреты читаются из build/.env самим скриптом
+Environment=NODE_ENV=production
+
+# Сервис не должен торчать наружу: слушает локально,
+# доступ нужен только Directus (докер-мост 172.17.0.1).
+# На сервере закрыть порт: ufw deny 8790
+
+[Install]
+WantedBy=multi-user.target
