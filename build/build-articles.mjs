@@ -4,6 +4,8 @@
  *   articles/index.html          список
  *   articles/<slug>/index.html   статья
  *
+ * И обновляет блок статей в sitemap.xml лендинга (остальное в нём не трогает).
+ *
  *   node build/build-articles.mjs
  *
  * Конфиг — окружение или build/.env:
@@ -18,6 +20,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync, readdirSync
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderArticle, renderIndex, setImageResolver } from './render.js';
+import { updateSitemap } from './sitemap.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -142,13 +145,43 @@ for (const a of articles) {
 writeFileSync(join(outDir, 'index.html'), renderIndex(site, articles));
 console.log(`  • ${(site.article_path || '/articles')}/`);
 
-/* страницы снятых с публикации статей убираем */
+/* ── подчистка: всё, что больше не нужно, из репозитория убираем ── */
+
+/* страницы снятых с публикации и удалённых статей */
 const slugs = new Set(articles.map((a) => a.slug));
 for (const entry of readdirSync(outDir)) {
   const p = join(outDir, entry);
   if (statSync(p).isDirectory() && !slugs.has(entry)) {
     rmSync(p, { recursive: true });
     console.log(`  × убрана устаревшая страница ${entry}/`);
+  }
+}
+
+/* картинки, на которые больше никто не ссылается.
+   Папка assets/articles целиком принадлежит сборке — исходники лендинга
+   лежат уровнем выше и сюда не попадают. */
+if (existsSync(IMG_DIR)) {
+  for (const entry of readdirSync(IMG_DIR)) {
+    if (used.has(entry)) continue;
+    const p = join(IMG_DIR, entry);
+    if (!statSync(p).isFile()) continue;
+    rmSync(p);
+    console.log(`  × убрана осиротевшая картинка assets/articles/${entry}`);
+  }
+}
+
+/* ── sitemap: правим только свой блок, чужие страницы не трогаем ── */
+const sitemapFile = join(ROOT, 'sitemap.xml');
+if (!existsSync(sitemapFile)) {
+  console.warn('\n  ! sitemap.xml не найден — блок статей не добавлен');
+} else {
+  const before = readFileSync(sitemapFile, 'utf8');
+  const after = updateSitemap(before, site, articles, (file, width) => imgCache.get(`${file?.id}:${width}`) ?? null);
+  if (after !== before) {
+    writeFileSync(sitemapFile, after);
+    console.log(`  • sitemap.xml: статей в карте — ${articles.filter((a) => !a.noindex).length} + страница списка`);
+  } else {
+    console.log('  · sitemap.xml без изменений');
   }
 }
 

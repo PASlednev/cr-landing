@@ -23,7 +23,9 @@ const navHref = (up, url) => (isExternal(url) ? url : `${up}${url}`);
 
 const headAssets = (up, site) => [
   site.theme_color ? `<meta name="theme-color" content="${esc(site.theme_color)}" />` : '',
-  site.favicon_path ? `<link rel="icon" type="image/png" sizes="32x32" href="${up}${esc(site.favicon_path)}" />` : '',
+  site.favicon_path ? (/\.ico$/.test(site.favicon_path)
+    ? `<link rel="icon" href="${up}${esc(site.favicon_path)}" sizes="any" />`
+    : `<link rel="icon" type="image/png" sizes="32x32" href="${up}${esc(site.favicon_path)}" />`) : '',
   site.apple_icon_path ? `<link rel="apple-touch-icon" sizes="180x180" href="${up}${esc(site.apple_icon_path)}" />` : '',
   site.fonts_url ? `<link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,6 +33,14 @@ const headAssets = (up, site) => [
   `<link rel="stylesheet" href="${up}styles.css" />`,
   `<link rel="stylesheet" href="${up}article.css" />`,
 ].filter(Boolean).join('\n  ');
+
+/** Логотип: картинка, если она задана в админке, иначе эмодзи + текст */
+const logoMark = (up, site) => (site.logo_image
+  ? `<img class="logo__img" src="${up}${esc(site.logo_image)}" alt="${esc(site.logo_text || site.name)}"${site.logo_image_w ? ` width="${esc(site.logo_image_w)}"` : ''}${site.logo_image_h ? ` height="${esc(site.logo_image_h)}"` : ''} />`
+  : [
+    site.logo_icon ? `<span class="logo__icon" aria-hidden="true">${esc(site.logo_icon)}</span>` : '',
+    site.logo_text ? `<span class="logo__text">${esc(site.logo_text)}</span>` : '',
+  ].filter(Boolean).join('\n        '));
 
 const header = (up, current, site) => {
   const items = site.nav_links || [];
@@ -43,8 +53,7 @@ const header = (up, current, site) => {
   return `  <header class="nav" id="site-header">
     <div class="nav__inner">
       <a class="logo" href="${up}" aria-label="${esc(site.name)}">
-        ${site.logo_icon ? `<span class="logo__icon" aria-hidden="true">${esc(site.logo_icon)}</span>` : ''}
-        ${site.logo_text ? `<span class="logo__text">${esc(site.logo_text)}</span>` : ''}
+        ${logoMark(up, site)}
       </a>
       <nav class="nav__links" aria-label="Primary">
         ${items.map(link).join('\n        ')}
@@ -79,6 +88,7 @@ const footer = (up, site) => `  <footer class="footer">
       <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </button>
+${site.analytics_path ? `\n  <script src="${up}${esc(site.analytics_path)}"></script>` : ''}
   <script src="${up}spoke.js"></script>`;
 
 /** Тело статьи из редактора: таблицы в скролл-обёртку, картинкам — lazy */
