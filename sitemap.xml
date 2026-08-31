@@ -156,7 +156,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- articles:start — генерируется build/build-articles.mjs, руками не править -->
+  <!-- articles:start — генерируется сборщиком статей, руками не править -->
   <url>
     <loc>https://chickenroadstrategy.com/articles/</loc>
     <lastmod>2026-08-26</lastmod>
