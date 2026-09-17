@@ -184,7 +184,61 @@
     });
   }
 
-  function init() { initBurger(); initScroll(); initReveal(); initDates(); initLang(); }
+  /* Promo modal: 30 s after page load, once per load — closed, it stays closed
+     until the next reload. Markup is built here so CMS article pages (shared
+     template, not in this repo) get it too. Same link as the Play Now button. */
+  var PROMO_URL = "https://dig-board.com/4rBV3d55?t1=1&t7=chicken&t5=1167";
+  var PROMO_DELAY = 30000;
+  var PROMO_TIMER = 5 * 60;
+
+  function initPromo() {
+    setTimeout(show, PROMO_DELAY);
+
+    function show() {
+      var wrap = document.createElement("div");
+      wrap.className = "promo";
+      wrap.innerHTML =
+        '<div class="promo__backdrop" data-promo-close></div>' +
+        '<div class="promo__card" role="dialog" aria-modal="true" aria-labelledby="promo-title">' +
+          '<button class="promo__close" type="button" aria-label="Close" data-promo-close>' +
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>' +
+          '</button>' +
+          '<div class="promo__logo" aria-hidden="true"><span class="promo__logo-icon">🐔</span><span class="promo__logo-text">Chicken Road</span></div>' +
+          '<span class="promo__pill">Welcome offer</span>' +
+          '<h2 class="promo__title" id="promo-title">Claim Your Chicken Road Bonus</h2>' +
+          '<p class="promo__offer">Up to $3,000 + 200 Free Spins</p>' +
+          '<div class="promo__timer">Offer expires in <b data-promo-clock>5:00</b></div>' +
+          '<a class="promo__cta" href="' + PROMO_URL + '" target="_blank" rel="noopener nofollow sponsored">Claim Bonus</a>' +
+          '<p class="promo__note">18+. New players only. Play responsibly.</p>' +
+        '</div>';
+      document.body.appendChild(wrap);
+      document.body.classList.add("promo-open");
+
+      var clock = wrap.querySelector("[data-promo-clock]");
+      var left = PROMO_TIMER;
+      var tick = setInterval(function () {
+        left -= 1;
+        if (left <= 0) { left = 0; clearInterval(tick); }
+        clock.textContent = Math.floor(left / 60) + ":" + ("0" + (left % 60)).slice(-2);
+      }, 1000);
+
+      function close() {
+        clearInterval(tick);
+        document.removeEventListener("keydown", onKey);
+        document.body.classList.remove("promo-open");
+        wrap.classList.add("is-closing");
+        setTimeout(function () { if (wrap.parentNode) wrap.parentNode.removeChild(wrap); }, 200);
+      }
+      function onKey(e) { if (e.key === "Escape") close(); }
+
+      [].forEach.call(wrap.querySelectorAll("[data-promo-close]"), function (el) { el.addEventListener("click", close); });
+      wrap.querySelector(".promo__cta").addEventListener("click", close);
+      document.addEventListener("keydown", onKey);
+      requestAnimationFrame(function () { wrap.classList.add("is-open"); wrap.querySelector(".promo__close").focus(); });
+    }
+  }
+
+  function init() { initBurger(); initScroll(); initReveal(); initDates(); initLang(); initPromo(); }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
