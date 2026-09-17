@@ -159,9 +159,15 @@
   <!-- articles:start — генерируется сборщиком статей, руками не править -->
   <url>
     <loc>https://chickenroadstrategy.com/articles/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chickenroadstrategy.com/articles/house-edge-explained/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://chickenroadstrategy.com/articles/what-is-rtp/</loc>
