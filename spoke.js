@@ -187,7 +187,7 @@
   /* Promo modal: 30 s after page load, once per load — closed, it stays closed
      until the next reload. Markup is built here so CMS article pages (shared
      template, not in this repo) get it too. Same link as the Play Now button. */
-  var PROMO_URL = "https://dig-board.com/4rBV3d55?t1=1&t7=chicken&t5=1167";
+  var PROMO_URL = "https://funnytracker.com/rZddZg";
   var PROMO_DELAY = 30000;
   var PROMO_TIMER = 5 * 60;
 
